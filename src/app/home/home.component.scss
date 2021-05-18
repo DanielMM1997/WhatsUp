@@ -1,5 +1,49 @@
-.chatArea {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.parallax {
+  background-image: url('/assets/imgs/undraw_researching_22gp.png');
+  height: 600px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.overImage {
+  width: 500px;
+  height: 150px;
+  background-color: #11111154;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 10%;
+  padding: 18px;
+  text-align: center;
+}
+
+.textOver {
+  font-size: 20px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.servers {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }

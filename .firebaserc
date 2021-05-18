@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "whatsup-80e9a": {
+      "hosting": {
+        "WhatsUp": [
+          "whatsup-80e9a"
+        ]
+      }
+    }
+  }
+}

@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyBCqwYOQW8ZaFo2fxRTvv2ggGZfEZASynY",
+    authDomain: "whatsup-80e9a.firebaseapp.com",
+    projectId: "whatsup-80e9a",
+    storageBucket: "whatsup-80e9a.appspot.com",
+    messagingSenderId: "555842357677",
+    appId: "1:555842357677:web:b9e82f0bc89b62e899f924",
+    measurementId: "G-G9T9DVK6PK"
+  }
 };
 
 /*
