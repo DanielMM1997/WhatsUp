@@ -1,44 +1,42 @@
-<div class="container pt-5">
-  <div class="containerLogin">
-    <div class="myrow">
-      <h2 class="text-center">Login with Social Media or Manually</h2>
-      <div class="vl">
-        <span class="inner">or</span>
+<div class="containerLogin">
+  <div class="myrow">
+    <h2 class="text-center">Login with Social Media or Manually</h2>
+    <div class="vl">
+      <span class="inner">or</span>
+    </div>
+    <div class="mycol">
+      <a href="#" class="fb btn">
+        Login with Facebook
+      </a>
+      <a href="#" class="twitter btn">
+        Login with Twitter
+      </a>
+      <a href="#" class="google btn">
+        Login with Google+
+      </a>
+    </div>
+    <div class="mycol">
+      <div class="hide-md-lg">
+        <p>Or sign in manually:</p>
       </div>
-      <div class="mycol">
-        <a href="#" class="fb btn">
-          Login with Facebook
-        </a>
-        <a href="#" class="twitter btn">
-          Login with Twitter
-        </a>
-        <a href="#" class="google btn">
-          Login with Google+
-        </a>
+      <form #signInForm="ngForm" (ngSubmit)="onSignIn()">
+        <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+        <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required>
+        <!-- <input type="submit" value="Login"> -->
+        <button class="btn btn-success" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <div class="row mx-0">
+      <div class="col">
+        <p class="text-white">Don’t you have an account? <a class="text-white" (click)="openModal(signUpModal)">Sign up</a></p>
       </div>
-      <div class="mycol">
-        <div class="hide-md-lg">
-          <p>Or sign in manually:</p>
-        </div>
-        <form #signInForm="ngForm" (ngSubmit)="onSignIn()">
-          <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
-          <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required>
-          <!-- <input type="submit" value="Login"> -->
-          <button class="btn btn-success" type="submit">Login</button>
-        </form>
+      <div class="col">
+        <a class="text-white" href="">Forgot password?</a>
       </div>
     </div>
-    <div class="bottom-container">
-      <div class="row mx-0">
-        <div class="col">
-          <p class="text-white">Don’t you have an account? <a class="text-white" (click)="openModal(signUpModal)">Sign up</a></p>
-        </div>
-        <div class="col">
-          <a class="text-white" href="">Forgot password?</a>
-        </div>
-      </div>
-    </div> 
-  </div>
+  </div> 
 </div>
 <ng-template #signUpModal let-modal>
   <div class="modal-header">

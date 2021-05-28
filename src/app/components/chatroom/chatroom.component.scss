@@ -35,9 +35,7 @@
 .chat-message .right-bubble {
   position: relative;
   background: #dcf8c6;
-  border-top-left-radius: .4em;
-  border-bottom-left-radius: .4em;
-  border-bottom-right-radius: .4em;
+  border-radius: 0.4em 0.0em 0.4em 0.4em;
   padding: 5px 10px 10px;
   left: 15%;
 }
@@ -121,4 +119,13 @@
   height: 34px;
   left: 10%;
   right:10%;
+}
+
+.word-grap {
+  word-wrap: break-word;
+}
+
+.messageInput {
+  width: 80%;
+  height: 30px;
 }

@@ -22,10 +22,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 // components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 import { ServerComponent } from './server/server.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { ChatroomComponent } from './components/chatroom/chatroom.component';
 

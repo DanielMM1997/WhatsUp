@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Message } from 'src/app/models/message';
 import { User } from "../../models/user";
 import { SyncronizeDataService } from "../../services/syncronize-data.service";
@@ -26,6 +26,7 @@ export class ChatroomComponent implements OnInit {
   // ]
   messages: Message[];
   user: string = 'Daniel';
+  @ViewChild('messageInput') message: any;
 
   constructor(private syncronizeData: SyncronizeDataService) { }
 
@@ -45,7 +46,14 @@ export class ChatroomComponent implements OnInit {
     var newMessage = {
       user: 'Daniel', content: message, date:'13.00'
     }
-    this.syncronizeData.sendMessage(message)
+    this.syncronizeData.sendMessage(message);
+    this.autoScroll();
+    this.message.nativeElement.value='';
+    
+  }
+
+  autoScroll() {
+    document.getElementById('chat-pane').scroll({left: 0, top: document.getElementById('chat-pane').scrollHeight, behavior: 'smooth'})
   }
 
   exitChat() {

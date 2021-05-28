@@ -1,6 +1,13 @@
 <h3>Soy maria</h3>
-<p>{{ messageMaria }}</p>
-
-<input class="">
-<button (click)="sendMessage('soy maria')">send</button>
+<!-- <p>{{ messageMaria }}</p> #scrollMe [scrollTop]="scrollMe.scrollHeight"-->
+<div class="chat" id="chat2">
+  <ul *ngFor="let message of messages; let last = last">
+    {{last ? autoScroll() : ''}}
+    <li class="word-wrap">{{message.content}}</li>
+  </ul>
+</div>
+<input type="text" id="message" name="message" #messageInput>
+<button mat-icon-button (click)="sendMessage(messageInput.value);messageInput.value=''">
+  <mat-icon>send</mat-icon>
+</button>
 <hr>

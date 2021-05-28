@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   showSignIn() {
     this.islogged = true;
   }
+  
   onSignUp(): void {
     this.authService.signUp(this.email, this.password)
     .then((result) => {
