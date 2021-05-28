@@ -27,6 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { ServerComponent } from './server/server.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     ServerComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    ChatroomComponent
   ],
   imports: [
     BrowserModule,

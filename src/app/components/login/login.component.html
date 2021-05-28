@@ -1,32 +1,33 @@
 <div class="container pt-5">
   <div class="containerLogin">
-    <form #signInForm="ngForm" (ngSubmit)="onSignIn()">
-      <div class="myrow">
-        <h2 class="text-center">Login with Social Media or Manually</h2>
-        <div class="vl">
-          <span class="inner">or</span>
+    <div class="myrow">
+      <h2 class="text-center">Login with Social Media or Manually</h2>
+      <div class="vl">
+        <span class="inner">or</span>
+      </div>
+      <div class="mycol">
+        <a href="#" class="fb btn">
+          Login with Facebook
+        </a>
+        <a href="#" class="twitter btn">
+          Login with Twitter
+        </a>
+        <a href="#" class="google btn">
+          Login with Google+
+        </a>
+      </div>
+      <div class="mycol">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
         </div>
-        <div class="mycol">
-          <a href="#" class="fb btn">
-            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-          </a>
-          <a href="#" class="twitter btn">
-            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-          </a>
-          <a href="#" class="google btn">
-            <i class="fa fa-google fa-fw"></i> Login with Google+
-          </a>
-        </div>
-        <div class="mycol">
-          <div class="hide-md-lg">
-            <p>Or sign in manually:</p>
-          </div>
+        <form #signInForm="ngForm" (ngSubmit)="onSignIn()">
           <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
           <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required>
-          <input type="submit" value="Login">
-        </div>
+          <!-- <input type="submit" value="Login"> -->
+          <button class="btn btn-success" type="submit">Login</button>
+        </form>
       </div>
-    </form>
+    </div>
     <div class="bottom-container">
       <div class="row mx-0">
         <div class="col">
@@ -41,15 +42,13 @@
 </div>
 <ng-template #signUpModal let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Sign Up</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <h1 class="modal-title" id="modal-basic-title">Sign Up</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-   <!-- <div class="containerSignUp"> -->
   <div class="modal-body">
     <form #signUpForm="ngForm" (ngSubmit)="onSignUp()">
-      <!-- <h1 class="text-center">Sign Up</h1> -->
       <div class="form-group row">
         <div class="col-md-6 col-12 mb-3">
           <label for="username">Username</label>
@@ -75,9 +74,8 @@
         <label class="form-check-label" for="check">Agree to terms and conditions</label>
       </div>
       <div class="modal-footer">
-      <!-- <div class="justify-content-end d-flex"> -->
         <button class="btn btn-primary" type="submit">Sign up</button>
-        <button class="btn btn-danger mx-5" (click)="modal.close()">Cancel</button>
+        <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
       </div>
     </form> 
   </div>

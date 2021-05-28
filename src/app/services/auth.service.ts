@@ -13,14 +13,14 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private firebase: FirebaseApp) { 
     this.afAuth.authState.subscribe(user => {
-      if (user) {
+      // if (user) {
         this.user = user;
         localStorage.setItem('user', this.user);
-        localStorage.getItem('user');
-      } else {
-        localStorage.setItem('user', null);
-        localStorage.getItem('user');
-      }
+        // localStorage.getItem('user');
+      // } else {
+      //   localStorage.setItem('user', null);
+      //   localStorage.getItem('user');
+      // }
     })
   }
 
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   getCurrentUser() {
-    return this.user
+    return (this.user !== null) ? this.user : null;
   }
 
   signUp(email: string, password: string) {
@@ -38,7 +38,7 @@ export class AuthService {
     
     return this.afAuth.createUserWithEmailAndPassword(email.trim(), password)
       .then((result) => {
-        this.user = result.user
+        this.user = result.user.email
       })
       .catch(error => {
         console.log(error)
@@ -87,7 +87,7 @@ export class AuthService {
     this.router.navigate(['/'])
   }
 
-  SetUserData(user: any) {
+  setUserData(user: any) {
     // const userRef: AngularFirestoreDocument<any> = this.firebase.firestore.doc(`users/${user.id}`);
     const userData: User = {
       id: user.id,

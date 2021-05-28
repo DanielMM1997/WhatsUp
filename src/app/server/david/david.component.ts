@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Message } from 'src/app/models/message';
 import { SyncronizeDataService } from 'src/app/services/syncronize-data.service';
 
 @Component({
@@ -10,24 +11,20 @@ export class DavidComponent implements OnInit {
 
   @Input() messageDavid: string = "david"
   @Output() updateMessages = new EventEmitter<string>();
-  message: string;
+  messages: Message[];
 
   constructor(private syncronizeData: SyncronizeDataService) { }
 
   ngOnInit(): void {
-    this.syncronizeData.sendMessagesObservable.subscribe(message => {
-      this.message = message
-    })
   }
 
   sendMessage(message: string) {
     this.messageDavid = "enviar mensaje desde david"
     this.updateMessages.emit(this.messageDavid)
-    this.syncronizeData.messages = this.messageDavid
-    this.syncronizeData.sendMessages(message);
+    this.syncronizeData.sendMessage(message);
   }
 
-  getMessage() {
-    this.message = this.syncronizeData.messages
+  getMessages() {
+    this.messages = this.syncronizeData.getMessages()
   }
 }

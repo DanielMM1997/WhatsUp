@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../services/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements AfterViewInit {
 
 
   constructor(private authService: AuthService, private afAuth: AngularFireAuth) { }
@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   isLogged: boolean = false;
   username: string = "";
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.getCurrentUser()
   }
 
@@ -24,8 +24,7 @@ export class NavbarComponent implements OnInit {
     console.log('user: ', user);
     if (user) {
       this.isLogged = true;
-      
-      // this.username = user.
+      this.username = user
     } else {
       this.isLogged = false;
     }

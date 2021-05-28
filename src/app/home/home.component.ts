@@ -13,14 +13,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  sendMessage() {
-    this.message = ""
-    this.syncronizeData.messages = this.message
-  }
-
-  updateMessages(messages: string) {
-    this.message = messages
-    this.syncronizeData.messages = messages
-  }
 }
