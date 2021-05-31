@@ -1,11 +1,10 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './server/components.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 
 // firestore
 import { AngularFireModule } from '@angular/fire'
@@ -52,7 +51,7 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     NgbModule,
     MatTooltipModule,
@@ -60,4 +59,16 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
   providers: [AuthService, SyncronizeDataService, RoomService, ServerService],
   bootstrap: [AppComponent]
 })
+
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyBCqwYOQW8ZaFo2fxRTvv2ggGZfEZASynY",
+    authDomain: "whatsup-80e9a.firebaseapp.com",
+    projectId: "whatsup-80e9a",
+    storageBucket: "whatsup-80e9a.appspot.com",
+    messagingSenderId: "555842357677",
+    appId: "1:555842357677:web:b9e82f0bc89b62e899f924",
+    measurementId: "G-G9T9DVK6PK"
+}
+
 export class AppModule { }
