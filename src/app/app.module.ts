@@ -32,6 +32,16 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/login/login.component';
 import { ChatroomComponent } from './components/chatroom/chatroom.component';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyBCqwYOQW8ZaFo2fxRTvv2ggGZfEZASynY",
+  authDomain: "whatsup-80e9a.firebaseapp.com",
+  projectId: "whatsup-80e9a",
+  storageBucket: "whatsup-80e9a.appspot.com",
+  messagingSenderId: "555842357677",
+  appId: "1:555842357677:web:b9e82f0bc89b62e899f924",
+  measurementId: "G-G9T9DVK6PK"
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,14 +71,5 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
 })
 
 
-export const firebaseConfig = {
-    apiKey: "AIzaSyBCqwYOQW8ZaFo2fxRTvv2ggGZfEZASynY",
-    authDomain: "whatsup-80e9a.firebaseapp.com",
-    projectId: "whatsup-80e9a",
-    storageBucket: "whatsup-80e9a.appspot.com",
-    messagingSenderId: "555842357677",
-    appId: "1:555842357677:web:b9e82f0bc89b62e899f924",
-    measurementId: "G-G9T9DVK6PK"
-}
-
 export class AppModule { }
+
