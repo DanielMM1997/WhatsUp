@@ -8,7 +8,21 @@
 </div>
 <div class="servers">
   <div class="row row-cols-1 row-cols-md-3 mx-0">
-    <div class="col mb-3">
+    <div class="col mb-3" *ngFor="let server of servers">
+      <div class="card text-white bg-dark">
+        <img src="/assets/imgs/{{server.image}}" class="card-img-top" alt="{{server.image}}">
+        <div class="card-body">
+          <h1 class="card-title">{{server.title}}</h1>
+          <p class="card-text">{{server.description}}</p>
+        </div>
+        <div class="card-footer d-flex">
+          <small class="text-muted">Last updated 3 mins ago</small>
+          <span class="spacer"></span>
+          <a mat-flat-button color="primary" href="/chatroom/{{server.idServer}}">Join here</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col mb-3">
       <div class="card text-white bg-dark">
         <img src="/assets/imgs/server_manga.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -106,7 +120,7 @@
       </div>
     </div>
   </div> 
-  </div>
+  </div> -->
 </div>
 <div class="parallax"></div>
 <div class="parallax"></div>

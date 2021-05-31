@@ -9,13 +9,13 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
 import { AuthGuard } from "./guard/auth.guard";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
   { path:'home', component: HomeComponent},
   { path:'login', component: LoginComponent},
   { path:'david', component: DavidComponent},
   { path:'maria', component: MariaComponent},
   { path:'server', component: ServerComponent},
-  { path:'chatroom', component: ChatroomComponent, canActivate: [AuthGuard] },
+  { path:'chatroom/:id', component: ChatroomComponent, canActivate: [AuthGuard] },
+  // canActivate: [AuthGuard]
 ];
 
 @NgModule({

@@ -9,11 +9,11 @@ import { User } from '../models/user';
 export class SyncronizeDataService {
 
   users: User[] = [
-    {id: '1', email: 'dassdsad', username: 'daniel', password: '123'},
-    {id: '2', email: 'dassdsad', username: 'maria', password: '123'},
-    {id: '3', email: 'dassdsad', username: 'sofia', password: '123'},
-    {id: '4', email: 'dassdsad', username: 'david', password: '123'},
-    {id: '5', email: 'dassdsad', username: 'juan', password: '123'},
+    {idUser: '1', email: 'dassdsad', username: 'daniel'},
+    {idUser: '2', email: 'dassdsad', username: 'maria'},
+    {idUser: '3', email: 'dassdsad', username: 'sofia'},
+    {idUser: '4', email: 'dassdsad', username: 'david'},
+    {idUser: '5', email: 'dassdsad', username: 'juan'},
   ]
   messages: Message[] = [
     {user: 'Daniel', content: 'hola', date: '14.00'},

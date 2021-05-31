@@ -50,7 +50,7 @@
       <div class="form-group row">
         <div class="col-md-6 col-12 mb-3">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+          <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required>
         </div>
         <div class="col-md-6 col-12 mb-3">
           <label for="email">Email</label>
@@ -73,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" type="submit">Sign up</button>
-        <button class="btn btn-danger" (click)="modal.close()">Cancel</button>
+        <button class="btn btn-danger" (click)="modal.close();clearForm();">Cancel</button>
       </div>
     </form> 
   </div>

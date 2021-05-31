@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   islogged: boolean = false;
   email: string = "";
   password: string = "";
+  username: string = "";
 
   constructor(public authService: AuthService, private router: Router, private modal: NgbModal) { }
 
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
   }
   
   onSignUp(): void {
-    this.authService.signUp(this.email, this.password)
+
+    this.authService.signUp(this.username, this.email, this.password)
     .then((result) => {
       // this.router.navigate(['/login']);
       this.modal.dismissAll();
@@ -51,5 +53,11 @@ export class LoginComponent implements OnInit {
     .catch( error => {
       console.log(error);
     })
+  }
+
+  clearForm() {
+    this.email = '';
+    this.username = '';
+    this.password = '';
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,9 @@ import { environment } from 'src/environments/environment';
 
 // services
 import { AuthService } from "./services/auth.service";
+import { RoomService } from "./services/room.service";
+import { ServerService } from "./services/server.service";
+import { SyncronizeDataService } from "./services/syncronize-data.service";
 
 // angular material
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -52,7 +55,7 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
     AngularFireAuthModule,
     NgbModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, SyncronizeDataService, RoomService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

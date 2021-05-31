@@ -6,7 +6,12 @@
     <a mat-button href="/david" class="mynav-item">David</a>
     <a mat-button href="/maria" class="mynav-item">Maria</a>
     <span class="example-spacer"></span>
-    <a mat-icon-button class="mynav-item"><mat-icon>{{ username }}</mat-icon></a>
+    <div *ngIf="authService.userData">
+      <button mat-button class="mynav-item">{{authService.userData.username}}</button>
+    </div>
+    <div *ngIf="isLogged">
+      <a mat-icon-button class="mynav-item" (click)="onSignOut()"><mat-icon>poll</mat-icon></a>
+    </div>
     <a mat-icon-button class="mynav-item"><mat-icon>menu</mat-icon></a>
     <a mat-icon-button class="mynav-item"><mat-icon>add</mat-icon></a>
     <a mat-icon-button class="mynav-item" href="/login"><mat-icon>login</mat-icon></a>

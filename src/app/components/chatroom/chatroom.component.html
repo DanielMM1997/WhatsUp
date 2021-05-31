@@ -4,6 +4,12 @@
       <div class="users-card" *ngFor="let user of users">
         <mat-icon>person</mat-icon><span class="username">{{user.username}}</span>
       </div>
+      <div *ngIf="isJoinChat;else noJoinChat">
+        <button mat-button (click)="exitChatRoom()">Exit Chat</button>
+      </div>
+      <ng-template #noJoinChat>
+        <button mat-button (click)="joinChatRoom()">Join Chat</button>
+      </ng-template>
     </div>
   </div>
   <div class="col-10">
@@ -23,13 +29,15 @@
     </div>
   </div>
 </div>
-<div class="row mx-0">
-  <div class="d-flex justify-content-end">
-    <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageInput.value)" style="width: 80%;">
-      <input class="messageInput" placeholder="Write message here" #messageInput required>
-      <button type="submit" [disabled]="!messageForm.form.valid" mat-icon-button>
-        <mat-icon>send</mat-icon>
-      </button>
-    </form>
+<div *ngIf="isJoinChat">
+  <div class="row mx-0">
+    <div class="d-flex justify-content-end">
+      <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageInput.value)" style="width: 80%;">
+        <input class="messageInput" placeholder="Write message here" #messageInput required>
+        <button type="submit" [disabled]="!messageForm.form.valid" mat-icon-button>
+          <mat-icon>send</mat-icon>
+        </button>
+      </form>
+    </div>
   </div>
 </div>
