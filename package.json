@@ -39,6 +39,7 @@
     "@angular/compiler-cli": "~11.2.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "codelyzer": "^6.0.0",
     "firebase-tools": "^9.11.0",
     "fuzzy": "^0.1.3",
