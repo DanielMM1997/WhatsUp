@@ -5,13 +5,13 @@
       <span class="inner">or</span>
     </div>
     <div class="mycol">
-      <a href="#" class="fb btn">
+      <a href="" class="fb btn">
         Login with Facebook
       </a>
-      <a href="#" class="twitter btn">
+      <a href="" class="twitter btn">
         Login with Twitter
       </a>
-      <a href="#" class="google btn">
+      <a href="" class="google btn">
         Login with Google+
       </a>
     </div>
@@ -22,7 +22,6 @@
       <form #signInForm="ngForm" (ngSubmit)="onSignIn()">
         <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
         <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required>
-        <!-- <input type="submit" value="Login"> -->
         <button class="btn btn-success" type="submit">Login</button>
       </form>
     </div>
@@ -72,7 +71,7 @@
         <label class="form-check-label" for="check">Agree to terms and conditions</label>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" type="submit">Sign up</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!signUpForm.form.valid">Sign up</button>
         <button class="btn btn-danger" (click)="modal.close();clearForm();">Cancel</button>
       </div>
     </form> 

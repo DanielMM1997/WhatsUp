@@ -17,10 +17,9 @@
       <div class="message-box" *ngFor="let message of messages; let last = last">
         {{last ? autoScroll() : ''}}
         <div class="chat-message">
-          <!-- <div class="rigth-bubble" [ngClass]="{'right-bubble': message.user === 'Daniel', 'left-bubble': message.user !== 'Daniel'}"> -->
-          <div class="rigth-bubble" [ngClass]="message.user === user ? 'right-bubble' : 'left-bubble'">
-            <span class="msg-name" *ngIf="message.user === user">Me</span>
-            <span class="msg-name" *ngIf="message.user !== user">{{message.user}}</span>
+          <div class="rigth-bubble" [ngClass]="message.user === username ? 'right-bubble' : 'left-bubble'">
+            <span class="msg-name" *ngIf="message.user === username">Me</span>
+            <span class="msg-name" *ngIf="message.user !== username">{{message.user}}</span>
             <span class="msg-date"> at {{message.date}}</span>
             <p class="word-grap">{{message.content}}</p>
           </div>
@@ -33,7 +32,7 @@
   <div class="row mx-0">
     <div class="d-flex justify-content-end">
       <form #messageForm="ngForm" (ngSubmit)="onSubmit(messageInput.value)" style="width: 80%;">
-        <input class="messageInput" placeholder="Write message here" #messageInput required>
+        <input class="messageInput" placeholder="Write message here" [(ngModel)]="message" name="message" #messageInput required>
         <button type="submit" [disabled]="!messageForm.form.valid" mat-icon-button>
           <mat-icon>send</mat-icon>
         </button>

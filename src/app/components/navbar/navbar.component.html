@@ -6,15 +6,14 @@
     <a mat-button href="/david" class="mynav-item">David</a>
     <a mat-button href="/maria" class="mynav-item">Maria</a>
     <span class="example-spacer"></span>
-    <div *ngIf="authService.userData">
-      <button mat-button class="mynav-item">{{authService.userData.username}}</button>
+    <div *ngIf="authService.currentUser;else noSignIn">
+      <button mat-button class="mynav-item">{{authService.currentUser.username}}</button>
+      <a mat-icon-button class="mynav-item" matTooltip="Add server"><mat-icon>add</mat-icon></a>
+      <a mat-icon-button class="mynav-item" (click)="onSignOut()" matTooltip="Sign Out"><mat-icon>logout</mat-icon></a>
+      <a mat-icon-button class="mynav-item" matTooltip="Edit profile"><mat-icon>settings</mat-icon></a>
     </div>
-    <div *ngIf="isLogged">
-      <a mat-icon-button class="mynav-item" (click)="onSignOut()"><mat-icon>poll</mat-icon></a>
-    </div>
-    <a mat-icon-button class="mynav-item"><mat-icon>menu</mat-icon></a>
-    <a mat-icon-button class="mynav-item"><mat-icon>add</mat-icon></a>
-    <a mat-icon-button class="mynav-item" href="/login"><mat-icon>login</mat-icon></a>
-    <a mat-icon-button class="mynav-item"><mat-icon>settings</mat-icon></a>
+    <ng-template #noSignIn>
+      <a mat-icon-button class="mynav-item" matTooltip="Sign In" href="/login"><mat-icon>login</mat-icon></a>
+    </ng-template>
   </mat-toolbar>
 </div>

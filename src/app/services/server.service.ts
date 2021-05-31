@@ -7,6 +7,7 @@ import { Server } from '../models/server';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ServerService {
 
   serversList: AngularFirestoreCollection<Server>;

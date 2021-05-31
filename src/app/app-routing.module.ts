@@ -15,7 +15,7 @@ const routes: Routes = [
   { path:'maria', component: MariaComponent},
   { path:'server', component: ServerComponent},
   { path:'chatroom/:id', component: ChatroomComponent, canActivate: [AuthGuard] },
-  // canActivate: [AuthGuard]
+  { path:'**', component: HomeComponent},
 ];
 
 @NgModule({

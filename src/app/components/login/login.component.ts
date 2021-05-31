@@ -11,9 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   islogged: boolean = false;
-  email: string = "";
-  password: string = "";
-  username: string = "";
+  email: string = "daniel@hotmail.es";
+  password: string = "123456";
+  username: string = "Daniel";
 
   constructor(public authService: AuthService, private router: Router, private modal: NgbModal) { }
 
@@ -24,19 +24,9 @@ export class LoginComponent implements OnInit {
     this.modal.open(content, { size: 'lg', centered: true});
   }
 
-  showSignUp() {
-    this.islogged = false;
-  }
-
-  showSignIn() {
-    this.islogged = true;
-  }
-  
   onSignUp(): void {
-
     this.authService.signUp(this.username, this.email, this.password)
     .then((result) => {
-      // this.router.navigate(['/login']);
       this.modal.dismissAll();
     })
     .catch(error => {
@@ -47,7 +37,6 @@ export class LoginComponent implements OnInit {
   onSignIn(): void {
     this.authService.signIn(this.email, this.password)
     .then((result) => {
-
       // this.router.navigate(['/home'])
     })
     .catch( error => {

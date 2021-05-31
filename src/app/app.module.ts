@@ -22,6 +22,7 @@ import { SyncronizeDataService } from "./services/syncronize-data.service";
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // components
 import { AppComponent } from './app.component';
@@ -54,6 +55,7 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     NgbModule,
+    MatTooltipModule,
   ],
   providers: [AuthService, SyncronizeDataService, RoomService, ServerService],
   bootstrap: [AppComponent]
