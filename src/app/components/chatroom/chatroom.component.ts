@@ -17,7 +17,7 @@ export class ChatroomComponent implements OnInit {
   room: Room;
   users: User[];
   message: string = '';
-  username: string = '';
+  emailuser: string = '';
   isJoinChat = false;
   @ViewChild('messageInput') messageInput: any;
 
@@ -28,6 +28,7 @@ export class ChatroomComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.authService
     this.getChatRoom();
   }
 
@@ -40,9 +41,9 @@ export class ChatroomComponent implements OnInit {
         this.users = data[0]["users"] as User[]
         this.messages = data[0]["messages"] as Message[]
         this.room = data[0] as Room;
-        this.roomService.setCurrentRoom(data[0])
+        this.roomService.setCurrentRoom(data[0]);
+        this.emailuser = this.authService.currentUser.email;
       }
-      this.username = this.authService.currentUser.username;
     })
   }
 
@@ -54,7 +55,7 @@ export class ChatroomComponent implements OnInit {
   onSubmit(message: string) {
     var date = new Date().toLocaleTimeString().split(':',2).join(':');
     var newMessage: Message = {
-      user: this.authService.currentUser.username, content: message, date: date
+      user: this.authService.currentUser.username, email: this.authService.currentUser.email, content: message, date: date
     }
     this.roomService.sendMessage(newMessage);
     this.autoScroll();
@@ -69,5 +70,6 @@ export class ChatroomComponent implements OnInit {
   exitChatRoom() {
     this.roomService.removeUserChat(this.authService.currentUser);
     this.isJoinChat = false;
+    // window.location.reload();
   }
 }

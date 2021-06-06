@@ -17,9 +17,9 @@
       <div class="message-box" *ngFor="let message of messages; let last = last">
         {{last ? autoScroll() : ''}}
         <div class="chat-message">
-          <div class="rigth-bubble" [ngClass]="message.user === username ? 'right-bubble' : 'left-bubble'">
-            <span class="msg-name" *ngIf="message.user === username">Me</span>
-            <span class="msg-name" *ngIf="message.user !== username">{{message.user}}</span>
+          <div class="rigth-bubble" [ngClass]="message.email === emailuser ? 'right-bubble' : 'left-bubble'">
+            <span class="msg-name" *ngIf="message.email === emailuser">Me</span>
+            <span class="msg-name" *ngIf="message.email !== emailuser">{{message.user}}</span>
             <span class="msg-date"> at {{message.date}}</span>
             <p class="word-grap">{{message.content}}</p>
           </div>

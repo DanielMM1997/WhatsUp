@@ -16,11 +16,11 @@ export class SyncronizeDataService {
     {idUser: '5', email: 'dassdsad', username: 'juan'},
   ]
   messages: Message[] = [
-    {user: 'Daniel', content: 'hola', date: '14.00'},
-    {user: 'David', content: 'hola', date: '14.00'},
-    {user: 'Daniel', content: 'como estas?', date: '14.00'},
-    {user: 'David', content: 'bien, y tu?', date: '14.00'},
-    {user: 'Daniel', content: 'bien, gracias', date: '14.00'},
+    {user: 'Daniel', email: 'daniel@hotmail.es',content: 'hola', date: '14.00'},
+    {user: 'David', email: 'david@hotmail.es', content: 'hola', date: '14.00'},
+    {user: 'Daniel', email: 'daniel@hotmail.es', content: 'como estas?', date: '14.00'},
+    {user: 'David', email: 'david@hotmail.es', content: 'bien, y tu?', date: '14.00'},
+    {user: 'Daniel', email: 'daniel@hotmail.es', content: 'bien, gracias', date: '14.00'},
   ]
 
   private sendMessagesSubject = new Subject<Message[]>();
@@ -30,14 +30,17 @@ export class SyncronizeDataService {
 
   sendMessage(message: string) {
     var newMessage = {
-      user: 'Daniel', content: message, date:'13.00'
+      user: 'Daniel', email: 'daniel@hotmail.es', content: message, date:'13.00'
     }
-    // this.sendMessagesSubject.next(Object.assign(newMessage, this.messages));
     this.messages.push(newMessage)
   }
 
   getMessages() {
     return this.messages;
+  }
+
+  getMessagesObservable() {
+    return this.sendMessagesObservable
   }
 
   getUsers() {

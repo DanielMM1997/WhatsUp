@@ -1,10 +1,8 @@
 <div>
   <mat-toolbar color="primary">
-    <a mat-button href="/server" class="mynav-item">Servers</a>
-    <a mat-button href="/friends" class="mynav-item">Friends</a>
     <a mat-button href="/home" class="mynav-item">Home</a>
-    <a mat-button href="/david" class="mynav-item">David</a>
-    <a mat-button href="/maria" class="mynav-item">Maria</a>
+    <a mat-button href="/server" class="mynav-item">Server</a>
+    <a mat-button href="/friends" class="mynav-item">Friends</a>
     <span class="example-spacer"></span>
     <div *ngIf="authService.currentUser;else noSignIn">
       <button mat-button class="mynav-item">{{authService.currentUser.username}}</button>
